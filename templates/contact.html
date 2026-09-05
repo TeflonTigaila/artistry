@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% set active = "contact" %}
+{% block title %}Contact – Artistry Studyo by Alice{% endblock %}
+{% block contact_strip %}{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+	<div class="page-hero-bg" style="background:linear-gradient(135deg,#120310 0%,#090108 60%,#0d0214 100%)"></div>
+	<div class="page-hero-content">
+		<div class="breadcrumb"><a href="/">Home</a><span>›</span>Contact</div>
+		<h1 class="page-title">Con<em>tact</em></h1>
+	</div>
+</div>
+<div class="divider"></div>
+
+<!-- Info -->
+<section style="background:var(--dark)">
+	<div class="wrap">
+		<div style="display:grid;grid-template-columns:1fr;gap:40px">
+
+			<div class="rv" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;flex-wrap:wrap">
+				<div>
+					<p class="c-label" style="margin-bottom:8px">Telefon</p>
+					<a href="tel:0739189100" class="c-val" style="font-size:1.2rem">0739 189 100</a>
+				</div>
+				<div>
+					<p class="c-label" style="margin-bottom:8px">Adresă</p>
+					<a href="https://maps.app.goo.gl/BbhGaqgogMTn3e2N7" target="_blank" rel="noopener" class="c-val"
+						style="font-size:.95rem;line-height:1.6;display:block">
+						str. Jean Paul Marat nr 6<br>Timișoara
+					</a>
+				</div>
+				<div>
+					<p class="c-label" style="margin-bottom:8px">Instagram</p>
+					<a href="https://www.instagram.com/artistry.studyo.by.alice/" class="c-val" style="font-size:.95rem">@artistrystudyobyalice</a>
+				</div>
+				<div>
+					<p class="c-label" style="margin-bottom:8px">Facebook</p>
+					<a href="https://www.facebook.com/ArtistryStudyobyAlice" class="c-val" style="font-size:.95rem">Artistry Studyo by Alice</a>
+				</div>
+			</div>
+
+			<div class="rv" style="margin-top:8px">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2785.6733213963757!2d21.2027026!3d45.717590099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47455daefdfdf663%3A0x93dcc67ae5dba6b5!2sArtistry%20Salon!5e0!3m2!1sro!2srs!4v1775056709181!5m2!1sro!2srs"
+					width="100%" height="340"
+					allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Comments -->
+<section style="background:var(--dark2)">
+	<div class="comments-wrap wrap">
+		<div class="rv" style="text-align:center;margin-bottom:40px">
+			<span class="tag">Comunitate</span>
+			<h2 class="stitle">Mesajele <em>voastre</em></h2>
+		</div>
+
+		<div class="comment-form rv">
+			<h3>Lasă un mesaj</h3>
+			<form id="comment-form" autocomplete="off">
+				<div class="form-row">
+					<div class="form-group">
+						<label for="fname">Numele tău</label>
+						<input type="text" id="fname" name="name" placeholder="Ex: Maria P." required>
+					</div>
+					<div class="form-group">
+						<label>Rating</label>
+						<div class="rating-input">
+							<input type="radio" name="rating" id="r5" value="5"><label for="r5">★</label>
+							<input type="radio" name="rating" id="r4" value="4"><label for="r4">★</label>
+							<input type="radio" name="rating" id="r3" value="3"><label for="r3">★</label>
+							<input type="radio" name="rating" id="r2" value="2"><label for="r2">★</label>
+							<input type="radio" name="rating" id="r1" value="1"><label for="r1">★</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="fmsg">Mesajul tău</label>
+					<textarea id="fmsg" name="message" placeholder="Spune-ne cum a fost experiența ta..."
+						required></textarea>
+				</div>
+				<button type="submit" class="btn btn-p"><span>Trimite mesajul</span></button>
+				<p class="form-msg" id="form-msg"></p>
+			</form>
+		</div>
+
+		<div class="rv" style="margin-top:40px">
+			<h3
+				style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.2rem;color:var(--cream);margin-bottom:24px">
+				Mesaje primite <span id="comments-count"
+					style="font-size:.75rem;color:var(--muted);font-style:italic"></span>
+			</h3>
+			<div id="comments-list"></div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/comments.js') }}"></script>
+{% endblock %}

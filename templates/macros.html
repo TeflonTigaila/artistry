@@ -1,0 +1,36 @@
+{% macro sidebar(skip) %}
+<div class="svc-sidebar rv-r">
+  <div class="sidebar-cta">
+    <p class="sidebar-cta-title">Programează-te <em style="color:var(--pink)">acum</em></p>
+    <p class="sidebar-cta-body">Contactează-ne pentru o programare sau detalii despre servicii.</p>
+    <a href="tel:0739189100" class="sidebar-tel">0739 189 100</a>
+    <a href="tel:0739189100" class="btn btn-p"><span>Sună acum</span></a>
+  </div>
+  <div class="other-svc">
+    <p class="other-svc-title">Alte servicii</p>
+    {% if skip != 'makeup' %}
+    <a href="/makeup" class="other-link"><span class="other-link-arrow">→</span><span class="other-link-name">Makeup</span></a>
+    {% endif %}
+    {% if skip != 'manichiura' %}
+    <a href="/manichiura" class="other-link"><span class="other-link-arrow">→</span><span class="other-link-name">Manichiură</span></a>
+    {% endif %}
+    {% if skip != 'extensii' %}
+    <a href="/extensii-gene" class="other-link"><span class="other-link-arrow">→</span><span class="other-link-name">Extensii Gene</span></a>
+    {% endif %}
+    {% if skip != 'bodypaint' %}
+    <a href="/bodypaint" class="other-link"><span class="other-link-arrow">→</span><span class="other-link-name">Bodypaint & SFX</span></a>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro photo_grid(names) %}
+<div class="photo-grid rv">
+  {% for n in names %}
+  <div class="photo-cell glow-cell">
+    <img src="{{ url_for('static', filename='img/' ~ n) }}" alt="{{ n }}"
+         onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>{{ n }}</div>'">
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}

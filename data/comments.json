@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "BOTEANU LUCAS",
+    "message": "SYTEUL MERGE",
+    "rating": 4,
+    "date": "01.04.2026"
+  },
+  {
+    "id": 2,
+    "name": "MIHAI",
+    "message": "1234",
+    "rating": 4,
+    "date": "01.04.2026"
+  },
+  {
+    "id": 3,
+    "name": "ADRIAN MINUNE",
+    "message": "ABCDE",
+    "rating": 5,
+    "date": "03.04.2026"
+  }
+]

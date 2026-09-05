@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+{% set active = "home" %}
+{% block title %}Artistry Studyo by Alice – Salon Timișoara{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ═══ HERO ═══
+  Slide data attributes:
+    data-type    = "video" | "image"
+    data-desktop = /static/videos/slideN-desktop.mp4  sau  /static/img/slideN-desktop.jpg
+    data-mobile  = /static/videos/slideN-mobile.mp4   sau  /static/img/slideN-mobile.jpg
+  Pune fișierele în static/videos/ sau static/img/
+-->
+<section class="hero" style="padding:0">
+  <div class="slides">
+    <div class="slide active"
+         data-type="video"
+         data-desktop="/static/videos/slide1-desktop.mp4"
+         data-mobile="/static/videos/slide1-mobile.mp4"></div>
+    <div class="slide"
+         data-type="video"
+         data-desktop="/static/videos/slide2-desktop.mp4"
+         data-mobile="/static/videos/slide2-mobile.mp4"></div>
+    <div class="slide"
+         data-type="video"
+         data-desktop="/static/videos/slide3-desktop.mp4"
+         data-mobile="/static/videos/slide3-mobile.mp4"></div>
+    <div class="slide"
+         data-type="image"
+         data-desktop="/static/img/slide4-desktop.jpg"
+         data-mobile="/static/img/slide4-mobile.jpg"></div>
+    <div class="slide"
+         data-type="image"
+         data-desktop="/static/img/slide5-desktop.jpg"
+         data-mobile="/static/img/slide5-mobile.jpg"></div>
+  </div>
+
+  <!-- Tap zones — invisible, replace arrows -->
+  <div class="tap-zone tap-left"  aria-label="Anterior"></div>
+  <div class="tap-zone tap-right" aria-label="Următor"></div>
+
+  <!-- Dots -->
+  <div class="dots" id="dots">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+  </div>
+
+  <!-- Text -->
+  <div class="hero-content">
+    <p class="hero-eyebrow">Salon de înfrumusețare · Timișoara</p>
+    <h1 class="hero-title">Arta<br><em>frumuseții</em> tale</h1>
+    <p class="hero-sub">Makeup, manichiură, extensii gene și bodypaint — cu pasiune și precizie artistică.</p>
+    <div class="hero-ctas">
+      <a href="tel:0739189100" class="btn btn-p"><span>Programează-te</span></a>
+      <a href="#servicii" class="btn btn-g">Servicii</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ ABOUT ═══ -->
+<section>
+  <div class="about-g">
+    <div class="about-imgs rv-l">
+      <!-- about1.jpg, about2.jpg, about3.jpg în static/img/ -->
+      <div class="about-img-cell glow-cell">
+        <img src="/static/img/about1.jpg" alt="Salon" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>about1.jpg</div>'">
+      </div>
+      <div class="about-img-cell glow-cell">
+        <img src="/static/img/about2.jpg" alt="Studio" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>about2.jpg</div>'">
+      </div>
+      <div class="about-img-cell glow-cell">
+        <img src="/static/img/about3.jpg" alt="Detaliu" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>about3.jpg</div>'">
+      </div>
+    </div>
+    <div class="rv-r">
+      <span class="tag">Despre noi</span>
+      <h2 class="stitle">Pasiune &amp; <em>Artă</em></h2>
+      <p class="sbody" style="margin-bottom:18px">O echipă de profesioniști dedicați frumuseții în toate formele sale. La Artistry Studyo by Alice, fiecare client este tratat ca o operă de artă în devenire.</p>
+      <p class="sbody" style="margin-bottom:26px">Ne găsești la <strong style="color:var(--cream)">str. Jean Paul Marat nr 6, Timișoara</strong>.</p>
+      <a href="{{ url_for('contact') }}" class="btn btn-p"><span>Contactează-ne</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="svc-bg" id="servicii" style="padding-left:0;padding-right:0">
+  <div class="svc-head rv" style="padding:0 24px">
+    <span class="tag">Ce oferim</span>
+    <h2 class="stitle">Serviciile <em>noastre</em></h2>
+  </div>
+  <div class="svc-grid">
+
+    <!-- MAKEUP -->
+    <div class="svc-card rv d1">
+      <div class="svc-anim">
+        <!-- svc-makeup.jpg în static/img/ -->
+        <div class="svc-photo" style="background-image:url('/static/img/svc-makeup.jpg')"></div>
+        <!-- makeup.gif în static/gifs/ -->
+        <div class="svc-gif">
+          <img class="svc-gif-img" data-gif="/static/gifs/makeup.gif" alt="Makeup animație">
+        </div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">01</div>
+        <h3 class="svc-name">Makeup</h3>
+        <p class="svc-desc">De la looks cotidiene la machiaj de scenă și nuntă — creat cu precizie artistică.</p>
+        <a href="{{ url_for('makeup') }}" class="svc-link">Află mai mult</a>
+      </div>
+    </div>
+
+    <!-- MANICHIURĂ -->
+    <div class="svc-card rv d2">
+      <div class="svc-anim">
+        <div class="svc-photo" style="background-image:url('/static/img/svc-manichiura.jpg')"></div>
+        <!-- manichiura.gif în static/gifs/ -->
+        <div class="svc-gif">
+          <img class="svc-gif-img" data-gif="/static/gifs/manichiura.gif" alt="Manichiură animație">
+        </div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">02</div>
+        <h3 class="svc-name">Manichiură</h3>
+        <p class="svc-desc">Nail art personalizat și îngrijire completă pentru mâini impecabile.</p>
+        <a href="{{ url_for('manichiura') }}" class="svc-link">Află mai mult</a>
+      </div>
+    </div>
+
+    <!-- EXTENSII GENE -->
+    <div class="svc-card rv d3">
+      <div class="svc-anim">
+        <div class="svc-photo" style="background-image:url('/static/img/svc-extensii.jpg')"></div>
+        <!-- extensii-gene.gif în static/gifs/ -->
+        <div class="svc-gif">
+          <img class="svc-gif-img" data-gif="/static/gifs/extensii-gene.gif" alt="Extensii gene animație">
+        </div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">03</div>
+        <h3 class="svc-name">Extensii Gene</h3>
+        <p class="svc-desc">Extensii, laminare și tratamente faciale pentru o privire spectaculoasă.</p>
+        <a href="{{ url_for('extensii_gene') }}" class="svc-link">Află mai mult</a>
+      </div>
+    </div>
+
+    <!-- BODYPAINT -->
+    <div class="svc-card rv d2" style="grid-column:1/-1;max-width:340px;margin:0 auto;width:100%">
+      <div class="svc-anim">
+        <div class="svc-photo" style="background-image:url('/static/img/svc-bodypaint.jpg')"></div>
+      </div>
+      <div class="svc-body">
+        <div class="svc-num">04</div>
+        <h3 class="svc-name">Bodypaint & SFX</h3>
+        <p class="svc-desc">Artă pe corp, efecte speciale și belly painting — creativitate fără limite.</p>
+        <a href="{{ url_for('bodypaint') }}" class="svc-link">Află mai mult</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ MOMENTS (phone + photos) ═══ -->
+<section style="background:var(--dark)">
+  <div class="svc-head rv" style="padding:0;margin-bottom:40px">
+    <span class="tag">Urmărește-ne</span>
+    <h2 class="stitle">Momente <em>din salon</em></h2>
+  </div>
+  <div class="moments-layout">
+
+    <!-- Phone -->
+    <div class="phone-outer rv-l">
+      <div style="position:relative">
+        <div class="phone-btn-vol"></div>
+        <div class="phone-btn-vol"></div>
+        <div class="phone-btn-power"></div>
+        <div class="phone-body">
+          <div class="phone-island"></div>
+          <div class="phone-screen">
+            <!-- phone-reel.mp4 / phone-reel-mobile.mp4 în static/videos/ -->
+       <!--     <video id="phone-video"
+                   data-desktop="/static/videos/phone-reel.mp4"
+                   data-mobile="/static/videos/phone-reel-mobile.mp4"
+				   autoplay muted loop playsinline></video>-->
+			   <video  autoplay muted loop playsinline controls style="width:100%; height:100%; object-fit:cover;">
+					<source src="/static/videos/phone-reel.mp4" type="video/mp4">
+				</video>
+            <div class="phone-screen-ov"></div>
+            <div class="phone-ph" id="phone-ph">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="16" stroke="white" stroke-width="1.5"/>
+                <path d="M14 12l10 6-10 6V12z" fill="white"/>
+              </svg>
+              phone-reel.mp4
+            </div>
+          </div>
+        </div>
+        <div class="phone-glow"></div>
+      </div>
+    </div>
+
+    <!-- Gallery grid (desktop only, hidden on mobile via CSS) -->
+    <!-- gallery1.jpg ... gallery5.jpg în static/img/ -->
+    <div class="phone-gallery rv-r">
+      <div class="glow-cell"><img src="/static/img/gallery1.jpg" alt="" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>gallery1.jpg</div>'"></div>
+      <div class="glow-cell"><img src="/static/img/gallery2.jpg" alt="" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>gallery2.jpg</div>'"></div>
+      <div class="glow-cell"><img src="/static/img/gallery3.jpg" alt="" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>gallery3.jpg</div>'"></div>
+      <div class="glow-cell"><img src="/static/img/gallery4.jpg" alt="" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>gallery4.jpg</div>'"></div>
+      <div class="glow-cell"><img src="/static/img/gallery5.jpg" alt="" onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>gallery5.jpg</div>'"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section style="background:var(--dark2)">
+  <div class="wrap">
+    <div class="test-head rv">
+      <span class="tag">Recenzii</span>
+      <h2 class="stitle">Ce spun <em>clientele</em> noastre</h2>
+    </div>
+    <div class="test-g">
+      <div class="test-c rv d1"><div class="stars">★★★★★</div><p class="test-txt">Sunt foarte mulțumită de serviciile Artistry Studyo by Alice. Salonul este cochet și atmosfera foarte plăcută.</p><span class="test-au">— Ana-Maria</span></div>
+      <div class="test-c rv d2"><div class="stars">★★★★★</div><p class="test-txt">Un ambient care te poartă în lumea secretă a prințeselor, în care se creează moderne frumuseți.</p><span class="test-au">— Diana</span></div>
+      <div class="test-c rv d3"><div class="stars">★★★★★</div><p class="test-txt">Experiență de neuitat. Alice și echipa ei sunt cu adevărat artiști — pasiune și profesionalism de neegalat.</p><span class="test-au">— Clientă fidelă</span></div>
+      <div class="test-c rv d4"><div class="stars">★★★★★</div><p class="test-txt">Rezultatul a depășit orice așteptări. O transformare completă, realizată cu grijă și talent.</p><span class="test-au">— Mireasă recunoscătoare</span></div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

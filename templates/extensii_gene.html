@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% set active = "svc" %}
+{% from "macros.html" import sidebar, photo_grid %}
+{% block title %}Extensii Gene – Artistry Studyo by Alice{% endblock %}
+
+{% block content %}
+<div class="page-hero">
+  <div class="page-hero-bg" style="background:linear-gradient(135deg,#120310 0%,#090108 60%,#0d0214 100%)"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span><a href="/#servicii">Servicii</a><span>›</span>Extensii Gene</div>
+    <h1 class="page-title">Extensii <em>Gene</em></h1>
+  </div>
+</div>
+<div class="divider"></div>
+
+<section style="background:var(--dark);padding-top:52px">
+<div class="svc-main">
+  <div>
+    <div class="svc-intro rv">
+      <div class="svc-intro-img glow-cell">
+        <!-- extensii-intro.jpg în static/img/ -->
+        <img src="{{ url_for('static', filename='img/extensii-intro.jpg') }}" alt="Extensii Gene" style="width:100%;height:100%;object-fit:cover"
+             onerror="this.parentElement.innerHTML='<div class=img-ph style=height:100%>extensii-intro.jpg</div>'">
+      </div>
+      <div>
+        <span class="tag">Cosmetică</span>
+        <h2 class="stitle">Privire <em>spectaculoasă</em></h2>
+        <p class="sbody">La Artistry Studyo by Alice utilizăm cele mai bune produse de îngrijire. Ne consultăm cu clientele și alegem împreună cel mai potrivit tratament cosmetic pentru tipul tău de piele și gene.</p>
+      </div>
+    </div>
+
+    <span class="tag rv" style="margin-top:8px">Servicii disponibile</span>
+    <div class="svc-list rv">
+      <div class="svc-item">
+        <div class="svc-item-num">01</div>
+        <div>
+          <div class="svc-item-name">Extensii gene 1D (clasic)</div>
+          <p class="svc-item-desc">Gene aplicate fir cu fir pentru un rezultat natural, elegant și confortabil.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">02</div>
+        <div>
+          <div class="svc-item-name">Extensii gene 2D / 3D (volum)</div>
+          <p class="svc-item-desc">Buchețele fine pentru volum sporit — privire dramatică sau subtilă, la alegere.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">03</div>
+        <div>
+          <div class="svc-item-name">Laminare gene</div>
+          <p class="svc-item-desc">Procedeu non-invaziv semi-permanent — gene curbate, lungi și dese.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">04</div>
+        <div>
+          <div class="svc-item-name">Laminare sprâncene</div>
+          <p class="svc-item-desc">Procedură revoluționară care hidratează și orientează firele — aspect îngrijit și natural.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">05</div>
+        <div>
+          <div class="svc-item-name">Pensat & Vopsit sprâncene</div>
+          <p class="svc-item-desc">Definire și armonizare după forma feței cu vopsire de lungă durată.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">06</div>
+        <div>
+          <div class="svc-item-name">Tratament facial</div>
+          <p class="svc-item-desc">Curățare, hidratare și revitalizare facială cu produse premium.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">07</div>
+        <div>
+          <div class="svc-item-name">Masaj facial</div>
+          <p class="svc-item-desc">Relaxare profundă și stimularea circulației — ten luminos și întinerit.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">08</div>
+        <div>
+          <div class="svc-item-name">Epilare (picioare, brațe, axilă)</div>
+          <p class="svc-item-desc">Servicii complete de epilare cu ceară și tehnici blânde.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-item-num">09</div>
+        <div>
+          <div class="svc-item-name">Epilare inghinală totală / parțială</div>
+          <p class="svc-item-desc">Tratament îngrijit și discret pentru confort maxim.</p>
+          <div class="svc-item-line"></div>
+        </div>
+      </div>
+    </div>
+
+    {{ photo_grid(['extensii-p1.jpg','extensii-p2.jpg','extensii-p3.jpg','extensii-p4.jpg','extensii-p5.jpg']) }}
+  </div>
+  {{ sidebar('extensii') }}
+</div>
+</section>
+{% endblock %}
